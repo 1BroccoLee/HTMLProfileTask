@@ -1,38 +1,93 @@
 
+body{
+    margin:0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    height:100vh;
+    justify-content: center;
+    background: url("https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-size: cover;
+    overflow: hidden;
+}
+
 h1{
-    color:darkslateblue; 
+    color:gray;
     font-size: 36px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding-left: 130px;
-    padding-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
-h3{
-    color:darkblue; 
-    font-size: 24px;
+h4{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 14px;
+    text-align: center;
+    color: gray;
+}
+    
+
+p{color:gray;
+    font-size: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: auto;
-    width: 70%;
-    padding-top: 50px;
+    width: 80%;
+    padding-top: 20px;
     padding-bottom: 10px;
     display:block
     
 }
 
-p{color:black
-    font-size: 24px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: auto;
-    width: 70%;
-    padding-top: 30px;
-    padding-bottom: 10px;
-    display:block
-    
+
+.input {
+  visibility: hidden;
 }
 
-img{margin: auto;
-    width: 70%;
-    padding-top: 30px;
-    padding-bottom: 10px;
-    display:block
+.label {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background-color: lightgray;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.circle {
+  width: 34px;
+  background-color: white;
+  height: 34px;
+  border-radius: 50%;
+  top: 3px;
+  position: absolute;
+  left: 3px;
+  animation: toggleOff 0.4s linear forwards;
+}
+
+.input:checked + .label {
+  background-color: white;
+}
+
+.input:checked + .label .circle {
+  animation: toggleOn 0.4s linear forwards;
+  background-color: black;
+}
+
+@keyframes toggleOn {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes toggleOff {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
